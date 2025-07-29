@@ -49,7 +49,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #F9FAFB;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -72,7 +72,7 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
+  --sidebar: #F9FAFB;
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -80,6 +80,17 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Custom DevDigest AI Color Palette */
+  --devdigest-primary: #3D5AFE;
+  --devdigest-secondary: #00BFA5;
+  --devdigest-bg-light: #F9FAFB;
+  --devdigest-bg-dark: #0F1117;
+  --devdigest-text-light: #1E1E1E;
+  --devdigest-text-dark: #FFFFFF;
+  --devdigest-component-light: #F9FAFB;
+  --devdigest-border-light: #B78686;
+  --devdigest-figma-border: #B7B6B6;
 }
 
 .dark {
@@ -114,6 +125,17 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  
+  /* Custom DevDigest AI Color Palette - Dark Mode */
+  --devdigest-primary: #3D5AFE;
+  --devdigest-secondary: #00BFA5;
+  --devdigest-bg-light: #0F1117;
+  --devdigest-bg-dark: #0F1117;
+  --devdigest-text-light: #FFFFFF;
+  --devdigest-text-dark: #FFFFFF;
+  --devdigest-component-light: #1E1E1E;
+  --devdigest-border-light: #374151;
+  --devdigest-figma-border: #B7B6B6;
 }
 
 @layer base {
@@ -122,5 +144,101 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* DevDigest AI Color Utilities */
+  .bg-devdigest-primary {
+    background-color: var(--devdigest-primary);
+  }
+  
+  .bg-devdigest-secondary {
+    background-color: var(--devdigest-secondary);
+  }
+  
+  .bg-devdigest-bg {
+    background-color: var(--devdigest-bg-light);
+  }
+  
+  .dark .bg-devdigest-bg {
+    background-color: var(--devdigest-bg-dark);
+  }
+  
+  .bg-devdigest-component {
+    background-color: var(--devdigest-component-light);
+  }
+  
+  .dark .bg-devdigest-component {
+    background-color: var(--devdigest-component-light);
+  }
+  
+  .text-devdigest-text {
+    color: var(--devdigest-text-light);
+  }
+  
+  .dark .text-devdigest-text {
+    color: var(--devdigest-text-dark);
+  }
+  
+  .border-devdigest-border {
+    border-color: var(--devdigest-border-light);
+  }
+  
+  .dark .border-devdigest-border {
+    border-color: var(--devdigest-border-light);
+  }
+  
+  /* Figma Border Utility */
+  .border-figma {
+    border: 2px solid var(--devdigest-figma-border);
+  }
+  
+  .border-figma-t {
+    border-top: 2px solid var(--devdigest-figma-border);
+  }
+  
+  .border-figma-r {
+    border-right: 2px solid var(--devdigest-figma-border);
+  }
+  
+  .border-figma-b {
+    border-bottom: 2px solid var(--devdigest-figma-border);
+  }
+  
+  .border-figma-l {
+    border-left: 2px solid var(--devdigest-figma-border);
+  }
+  
+  .border-figma-x {
+    border-left: 2px solid var(--devdigest-figma-border);
+    border-right: 2px solid var(--devdigest-figma-border);
+  }
+  
+  .border-figma-y {
+    border-top: 2px solid var(--devdigest-figma-border);
+    border-bottom: 2px solid var(--devdigest-figma-border);
+  }
+  
+  /* Gradient utilities */
+  .bg-devdigest-gradient {
+    background: linear-gradient(135deg, var(--devdigest-primary) 0%, var(--devdigest-secondary) 100%);
+  }
+  
+  /* Hover states */
+  .hover\:bg-devdigest-primary:hover {
+    background-color: var(--devdigest-primary);
+  }
+  
+  .hover\:bg-devdigest-secondary:hover {
+    background-color: var(--devdigest-secondary);
+  }
+  
+  .hover\:text-devdigest-primary:hover {
+    color: var(--devdigest-primary);
+  }
+  
+  .hover\:text-devdigest-secondary:hover {
+    color: var(--devdigest-secondary);
   }
 }
